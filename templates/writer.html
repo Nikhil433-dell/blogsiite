@@ -1,0 +1,875 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writers | Blogsite</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            background-color: #dedede;
+            height: 8vh;
+            width: 100%;
+        }
+
+        .li1 {
+            float: left;
+            cursor: pointer;
+        }
+
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #contact {
+            position: relative;
+            cursor: pointer;
+            top: 16px;
+            left: 51px;
+            transition: all .2s ease-in-out;
+            font-family: 'Acme';
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+        }
+
+        #contact:hover {
+            transform: scale(2.1);
+        }
+
+        .li1 {
+            float: left;
+            height: 7vh;
+            width: 13vw;
+            display: flex;
+            align-items: center;
+            font-family: Merienda;
+            font-size: 41px;
+            justify-content: center;
+            padding-top: 0px;
+        }
+
+        .user {
+            max-height: 3vh;
+            float: right;
+            margin-right: 9vw;
+            position: relative;
+            bottom: 6vh;
+            font-family: 'Acme';
+            font-size: 19px;
+        }
+
+        #img {
+            width: 3vw;
+            height: 6vh;
+            border-radius: 60px;
+            position: absolute;
+            left: 91vw;
+            top: 7px;
+            background-size: cover;
+            border: 1px solid #8c8484;
+        }
+
+        /* Dropdown Button */
+
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            left: 87vw;
+            top: 55px;
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {
+            display: block;
+        }
+
+        .ser {
+            height: 26vh;
+        }
+
+        #forS {
+            display: none;
+            font-family: 'Acme';
+        }
+
+        #drop {
+            width: 19px;
+            cursor: pointer;
+            position: absolute;
+            left: 94vw;
+            top: 40px;
+        }
+
+        .Aw {
+            text-decoration: none;
+            color: black;
+        }
+
+
+        #search {
+            height: 3vh;
+            position: relative;
+            top: 1vh;
+            right: 19vw;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+        }
+
+        #inpu {
+            position: relative;
+            left: 26vw;
+            bottom: 2vh;
+        }
+
+        input {
+            height: 4vh;
+            width: 238px;
+            transition-property: width, height;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
+        }
+
+
+        input[type="text"] {
+            font-size: 18px;
+            padding-left: 5px;
+            color: black;
+        }
+
+        .btn {
+            position: relative;
+            left: 45vw;
+            width: 41px;
+            bottom: 17px;
+            background-color: transparent;
+            border: 0;
+        }
+
+        .recent {
+            position: relative;
+            top: 8vh;
+            font-family: 'Raleway';
+            left: 20vw;
+            font-size: 32px;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        .container {
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            width: 48vw;
+            height: 29vh;
+            margin-top: 12vh;
+            margin-left: 23vw;
+            font-family: 'Raleway';
+            margin-bottom: 14vh;
+        }
+
+        .name {
+            margin-left: 3vw;
+            margin-top: 3vh;
+            font-family: system-ui;
+        }
+
+        .posts {
+            margin-left: 3vw;
+            font-size: 17px;
+            font-weight: bold;
+            margin-top: 2vh;
+        }
+
+        .bio {
+            position: relative;
+            bottom: 19vh;
+            left: 12vw;
+            width: 34vw;
+            height: 7em;
+            font-family: monospace;
+            overflow: hidden;
+            font-size: 13px;
+        }
+
+        .head {
+            position: relative;
+            bottom: 20vh;
+            left: 12vw;
+            font-family: cursive;
+            font-size: 17px;
+        }
+
+        #btn {
+            position: relative;
+            bottom: 18vh;
+            left: 37vw;
+            width: 6vw;
+            height: 4vh;
+            font-size: 15px;
+            cursor: pointer;
+            border: 0;
+            border-radius: 21px;
+            background: #dfc096;
+        }
+
+        .img {
+            height: 18vh;
+            width: 9vw;
+            background-size: cover;
+            position: relative;
+            top: 2vh;
+            left: 1vw;
+            border-radius: 90px;
+        }
+
+        footer {
+            background: #e3dcdd;
+            height: 14vh;
+        }
+
+        .comp {
+            font-family: Merienda;
+            font-size: 32px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 35px;
+        }
+
+        .forsearch {
+            height: 14vh;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .term {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .pri {
+            padding-top: 2vh;
+            margin-left: 46vw;
+        }
+
+        .ab {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .feedback {
+            display: none;
+            font-family: 'Acme';
+            font-size: 15px;
+        }
+
+        .viewprofile {
+            display: none;
+            font-family: 'Acme';
+            font-size: 15px;
+        }
+
+        .logout {
+            display: none;
+            font-family: 'Acme';
+            font-size: 15px;
+        }
+
+        #respdrop {
+            display: none;
+            width: 19px;
+            cursor: pointer;
+            position: absolute;
+            left: 94vw;
+            top: 40px;
+        }
+
+        #fa {
+            text-decoration: none;
+            color: black;
+        }
+
+        main {
+            min-height: 82vh;
+        }
+
+        @media screen and (max-width:1560px) {
+            footer {
+                height: 16vh;
+            }
+
+            .bio {
+                height: 13vh;
+            }
+
+            .user {
+                margin-right: 10vw;
+            }
+        }
+
+        @media screen and (max-width:1192px) {
+            .li1 {
+                margin-left: 2vw;
+            }
+
+            .cont {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width:1024px) {
+            .user {
+                font-size: 15px;
+                margin-right: 11vw;
+            }
+
+            #img {
+                width: 4vw;
+                left: 90vw;
+            }
+
+            .head {
+                left: 14vw;
+                font-size: 16px;
+            }
+
+            .bio {
+                left: 14vw;
+                width: 31vw;
+                font-size: 11px;
+            }
+
+            .recent {
+                font-size: 26px;
+            }
+
+            .container {
+                height: 26vh;
+            }
+
+            .img {
+                height: 16vh;
+                width: 11vw;
+                top: 2vh;
+                left: 1vw;
+            }
+        }
+
+        @media screen and (max-width:932px) {
+            .recent {
+                left: 37vw;
+            }
+
+            .li1 {
+                font-size: 30px;
+                margin-left: 1vw;
+            }
+        }
+
+        @media screen and (max-width:1024px) {
+            .show {
+                left: 82vw;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+
+            .img {
+                height: 12vh;
+                width: 11vw;
+                top: 2vh;
+                left: 2vw;
+            }
+
+            #chaticon {
+                right: 11vw;
+            }
+
+            .non {
+                font-size: 12px;
+            }
+
+            .head {
+                left: 14vw;
+                font-size: 13px;
+                font-weight: 550;
+            }
+
+            .li1 {
+                margin-left: 2vw;
+            }
+
+            #contact {
+                font-size: 17px;
+                top: 19px;
+                left: 38px;
+            }
+
+            #inpu {
+                width: 18vw;
+                bottom: 10px;
+            }
+
+            #search {
+                top: 2vh;
+            }
+
+            #img {
+                width: 5vw;
+            }
+
+            #drop {
+                left: 95vw;
+            }
+
+            .user {
+                bottom: 5vh;
+            }
+
+            .show {
+                left: 77vw;
+            }
+
+            .recent {
+                font-size: 22px;
+            }
+
+            .container {
+                height: 22vh;
+            }
+
+            #btn {
+                bottom: 17vh;
+                left: 36vw;
+                width: 6vw;
+                height: 3vh;
+                font-size: 12px;
+
+            }
+
+            .name {
+                font-size: 14px;
+                height: 52px;
+                width: 56vw;
+            }
+
+            .bio {
+                font-size: 11px;
+                height: 8vw;
+            }
+
+            .author {
+                font-size: 12px;
+            }
+
+            #mem {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+
+            #forS {
+                display: block;
+                position: absolute;
+                left: 32vw;
+                top: 18px;
+            }
+
+            .non {
+                font-size: 11px;
+            }
+
+            .pri {
+                padding-top: 3vh;
+                margin-left: 2vw;
+            }
+
+            .term {
+                margin-top: 0vh;
+                margin-left: 2vw;
+            }
+
+            .ab {
+                margin-top: 0vh;
+                margin-left: 2vw;
+            }
+
+            .name {
+                margin-top: 3vh;
+                margin-left: 4vw;
+                font-size: 12px;
+                height: 6vh;
+            }
+
+            .author {
+                margin-left: 4vw;
+                font-size: 10px;
+                width: 56vw;
+            }
+
+            .cat {
+                margin-left: 4vw;
+                font-size: 11px;
+            }
+
+            #respdrop {
+                display: block;
+            }
+
+            .recent {
+                font-size: 19px;
+                left: 32vw;
+                width: 55vw;
+            }
+
+            .li1 {
+                margin-left: 6vw;
+                font-size: 21px;
+            }
+
+            #contact {
+                display: none;
+            }
+
+            #img {
+                left: 83vw;
+                width: 10vw;
+            }
+
+            .feedback {
+                display: block;
+                position: relative;
+                top: 10vh;
+                left: -13vw;
+            }
+
+            .viewprofile {
+                display: block;
+                position: relative;
+                top: 11vh;
+                left: -13vw;
+            }
+
+            .logout {
+                display: block;
+                position: relative;
+                top: 12vh;
+                left: 6vw;
+            }
+
+            #inpu {
+                bottom: 0;
+                top: 8vh;
+                height: 3vh;
+                left: -15vw;
+                width: 40vw;
+            }
+
+            #search {
+                top: 11vh;
+                right: 61vw;
+            }
+
+            .bio {
+                left: 20vw;
+                bottom: 16vh;
+                width: 41vw;
+                height: 7vh;
+                font-size: 9px;
+
+            }
+
+            #btn {
+                bottom: 15vh;
+                height: 2vh;
+                width: 10vw;
+                font-size: 10px;
+                left: 47vw;
+            }
+
+            nav ul {
+                overflow: hidden;
+            }
+
+            .head {
+                bottom: 16vh;
+                left: 20vw;
+                font-size: 10px;
+                width: 56vw;
+            }
+
+            #drop {
+                left: 92vw;
+            }
+
+            .user {
+                display: none;
+            }
+
+            #drop {
+                display: none;
+            }
+
+            .onav {
+                font-size: 15px;
+                color: black;
+            }
+
+            #myDropdown {
+                min-width: 26vw;
+                left: 69vw;
+            }
+
+            #respdrop {
+                display: block;
+            }
+
+            .container {
+                width: 65vw;
+                margin-left: 17vw;
+                height: 17vh;
+            }
+
+            .img {
+                height: 9vh;
+                width: 15vw;
+            }
+
+            footer{
+                min-height: 20vh;
+            }
+
+            input[type="text"] {
+    font-size: 13px;
+}
+
+        }
+
+        @media screen and (max-width:375px) {
+
+            #img {
+                width: 11vw;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+
+            footer {
+                height: 14vh;
+            }
+
+            #img {
+                width: 14vw;
+                left: 77vw;
+            }
+
+            #respdrop {
+                left: 90vw;
+            }
+
+            #forS {
+                left: 40vw;
+            }
+
+            .li1 {
+                margin-left: 10vw;
+                font-size: 24px;
+            }
+
+            #inpu {
+                left: -17vw;
+                width: 45vw;
+            }
+
+            #search {
+                right: 64vw;
+            }
+
+
+            .blogpost {
+                width: 28vw;
+                left: 18vw;
+            }
+
+            .recent {
+                font-size: 16px;
+                left: 30vw;
+            }
+
+            .comp {
+                font-size: 28px;
+                margin-top: 0px;
+                margin-right: 23px;
+            }
+
+            footer {
+                height: 17vh;
+                padding-top: 2vh;
+            }
+
+            .feedback {
+                left: -16vw;
+            }
+
+            .viewprofile {
+                left: -16vw;
+            }
+
+            .img {
+                height: 7vh;
+            }
+
+            .container {
+                height: 15vh;
+            }
+
+            .head {
+                bottom: 14vh;
+                left: 20vw;
+                font-size: 9px;
+            }
+
+            .bio {
+                bottom: 14vh;
+                height: 14vw;
+                font-size: 8px;
+            }
+
+            #btn {
+                bottom: 13vh;
+            }
+
+            .name {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul id="nave">
+            <div class="li1"> <a id="ma" class="Aw" href="/index"> Blogsite</a></div>
+            <span><a href="feedback" id="contact">Feedback</a></span>
+            <span onclick="onlyS()" id="forS">Search</span>
+            <form action="/writer_search" method="get">
+                <input type="text" id="inpu" name="inpu" placeholder="search here" required>
+                <button class="btn" type="submit">
+                    <img id="search" src="/static/img/search.png" alt="search">
+                </button>
+            </form>
+            <div class="feedback"><a class="onav" href="feedback">Feedback</a></div>
+            <div class="viewprofile"><a class="onav" href="{% url 'user-profile' user.id %}">View profile</a></div>
+            <div class="logout"><a class="onav" href="/logout">Logout</a></div>
+            <p class="user">{{request.user}}</p>
+            <div class="dropdown">
+                <div class="drop" onclick="dropdown()">
+                    {% if user.profile.pro_img %}
+                    <div id="img" style="background-image: url('{{user.profile.pro_img.url}}');"></div>
+                    {% else %}
+                    <div id="img" style="background-image: url('{% static 'img/profile.png'  %}');"></div>
+                    {% endif %}
+                    <img id="drop" src="/static/img/down.png" class="dropbtn" alt="">
+                </div>
+                <img id="respdrop" onclick="menu()" src="/static/img/down.png" class="dropbtn" alt="">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="{% url 'user-profile' user.id %}">View profile</a>
+                    <a href="feedback" name="logout">Feedback</a>
+                    <a href="/logout" name="logout">Logout</a>
+                </div>
+            </div>
+    </nav>
+    <main>
+        <dv class="recent">ALL WRITERS : </dv>
+        {% for users in users %}
+        <div class="container">
+            {% if users.profile.pro_img %}
+            <div class="img" style="background-image: url({{users.profile.pro_img.url}});"></div>
+            {% else %}
+            <div class="img" style="background-image: url({% static '/img/profile.png' %});"></div>
+            {% endif %}
+            <div class="name">{{users.username}}</div>
+            <div class="head">About {{users.username}} : </div>
+            {% if users.profile.bio != "" %}
+            <div class="bio">{{users.profile.bio}}</div>
+            {% else %}
+            <div class="bio">{{users.username}} has no description yet.</div>
+            {% endif %}
+            <div class="view"><a href="{% url 'view-profile' users.id %}"><button id="btn">View</button></a></div>
+        </div>
+        {% endfor %}
+    </main>
+    <footer>
+        <div class="comp">Blogsite</div>
+        <div class="pri"> <a class="non" href="/privacypolicy">Privacy Policy</a></div>
+        <div class="term"> <a class="non" href="/termcondition">Terms and Conditions</a></div>
+        <div class="ab"> <a class="non" href="/about_us">About us</a></div>
+    </footer>
+</body>
+<script>
+    function dropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function menu() {
+        document.getElementById("nave").classList.toggle("ser");
+    }
+
+    function onlyS() {
+        document.getElementById("nave").classList.toggle("forsearch");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,998 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        body {
+            background: #c3c5d2;
+        }
+
+        img {
+            width: 1600px;
+            height: 712px;
+            margin-left: 0;
+            /* background-size: cover; */
+
+        }
+
+        h1 {
+            margin-top: 1vh;
+            margin-left: 9vw;
+            margin-bottom: 1vh;
+            font-family: system-ui;
+        }
+
+        .container {
+            background: #eeeeec;
+            height: 66vh;
+            position: absolute;
+            width: 24vw;
+            bottom: 20vh;
+            border-radius: 14px;
+            left: 50vw;
+            border: 0.5px solid #b5bbbb;
+        }
+
+        .email {
+            position: absolute;
+            right: 3vw;
+            bottom: 42vh;
+        }
+
+        .password {
+            position: absolute;
+            right: 3vw;
+            bottom: 32vh;
+        }
+
+        .nxt {
+            position: absolute;
+            right: 3vw;
+            bottom: 29vh;
+        }
+
+
+        #new {
+            color: black;
+        }
+
+        #new:hover {
+            color: red;
+        }
+
+        input {
+            margin-top: 6px;
+            height: 4vh;
+            width: 18vw;
+        }
+
+        label {
+            font-family: monospace;
+            font-size: 18px;
+        }
+
+        .text-box {
+            margin-left: 44vw;
+            margin-top: 42vh;
+        }
+
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 15px 40px;
+            display: inline-block;
+            border-radius: 100px;
+            transition: all .2s;
+            position: absolute;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white {
+            background-color: #fff;
+            color: #777;
+        }
+
+        .btn::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all .4s;
+        }
+
+        .btn-white::after {
+            background-color: #fff;
+        }
+
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+
+        .btn-animated {
+            animation: moveInBottom 5s ease-out;
+            animation-fill-mode: backwards;
+        }
+
+        @keyframes moveInBottom {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        #log {
+            position: relative;
+            right: 555px;
+            width: 80px;
+            height: 38px;
+            bottom: 8vh;
+            border-radius: 22px;
+            border: 0;
+            color: black;
+            background: #9da5ae;
+            font-family: system-ui;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+
+
+        /* Media queries */
+
+        @media screen and (max-width: 1561px) {
+            img {
+                width: 1558px;
+                height: 666px;
+                margin-left: 0px;
+            }
+        }
+
+        @media screen and (max-width: 1441px) {
+            img {
+                width: 1439px;
+                height: 662px;
+            }
+
+            form {
+                height: 0vh;
+            }
+
+            #log {
+                right: 507px;
+            }
+        }
+
+
+        @media screen and (max-width: 1025px) {
+            img {
+                object-fit: fill;
+                height: 937px;
+            }
+
+            .container {
+                left: 75vw;
+                bottom: 0;
+                width: 25vw;
+            }
+
+            #log {
+                right: 362px;
+            }
+
+            input {
+                width: 21vw;
+
+            }
+
+            .email {
+                right: 2vw;
+            }
+
+            .password {
+                right: 2vw;
+            }
+        }
+
+        @media screen and (max-width: 769px) {
+            img {
+                height: 184vh;
+
+            }
+
+            .container {
+                left: 112vw;
+                top: 51vh;
+                height: 75vh;
+                width: 50vw;
+            }
+
+            #new {
+                bottom: 39vh;
+            }
+
+            input[type="text"] {
+                font-size: 21px;
+            }
+
+            input[type="password"] {
+                font-size: 21px;
+            }
+
+            input {
+                width: 36vw;
+            }
+
+
+            #log {
+                right: 216px;
+            }
+
+            h1 {
+                margin-left: 18vw;
+            }
+
+            input {
+                width: 42vw;
+                height: 6vh;
+            }
+
+            label {
+                font-size: 26px;
+            }
+
+
+
+            #log {
+                right: 205px;
+                top: 0vh;
+                width: 13vh;
+                height: 6vh;
+                font-size: 20px;
+            }
+
+            .nxt {
+                top: 39vh;
+            }
+
+            #new {
+                font-size: 23px;
+            }
+
+            .email {
+                bottom: 53vh;
+            }
+
+            .password {
+                bottom: 37vh;
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+            .container {
+                left: 17vw;
+                top: 16vh;
+                height: 119vh;
+                width: 112vw;
+            }
+
+            h1 {
+                margin-left: 42vw;
+                font-size: 43px;
+            }
+
+            input {
+                width: 90vw;
+                height: 6vh;
+            }
+
+            .email {
+                right: 11vw;
+                bottom: 89vh;
+            }
+
+            .password {
+                right: 11vw;
+                bottom: 73vh;
+            }
+
+            input[type="email"] {
+                font-size: 17px;
+            }
+
+            input[type="password"] {
+                font-size: 17px;
+            }
+
+            .nxt {
+                top: 48vh;
+                right: 10vw;
+            }
+
+            #new {
+                font-size: 25px;
+            }
+
+            #log {
+                right: 18px;
+                top: 7vh;
+                width: 18vh;
+                height: 8vh;
+                font-size: 23px;
+            }
+
+            img {
+                width: 147vw;
+                object-fit: cover;
+                height: 146vh;
+
+            }
+
+        }
+
+        @media screen and (max-width: 320px) {
+            .container {
+                height: 105vh;
+            }
+
+            .email {
+                bottom: 78vh;
+            }
+
+            .password {
+                bottom: 64vh;
+            }
+
+            h1 {
+                margin-left: 37vw;
+                font-size: 40px;
+            }
+
+            label {
+                font-size: 23px;
+            }
+
+            input[type="email"] {
+                font-size: 18px;
+            }
+
+            input[type="password"] {
+                font-size: 18px;
+            }
+
+            .nxt {
+                top: 42vh;
+            }
+
+            #new {
+                font-size: 21px;
+            }
+
+            #log {
+                right: 21px;
+                top: 0vh;
+                width: 15vh;
+                height: 7vh;
+                font-size: 20px;
+            }
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #c3c5d2;
+            overflow-x: hidden;
+        }
+
+        img {
+            width: 1583px;
+            height: 785px;
+            margin-left: 0;
+            /* background-size: cover; */
+
+        }
+
+        h1 {
+            margin-top: 1vh;
+            margin-left: 9vw;
+            margin-bottom: 1vh;
+            font-family: system-ui;
+        }
+
+        .container {
+            background: #eeeeec;
+            height: 66vh;
+            position: absolute;
+            width: 24vw;
+            bottom: 20vh;
+            border-radius: 14px;
+            left: 50vw;
+            border: 0.5px solid #b5bbbb;
+        }
+
+        .email {
+            position: absolute;
+            right: 3vw;
+            bottom: 42vh;
+        }
+
+        .password {
+            position: absolute;
+            right: 3vw;
+            bottom: 32vh;
+        }
+
+        .nxt {
+            position: absolute;
+            right: 3vw;
+            bottom: 29vh;
+        }
+
+
+        #new {
+            color: black;
+        }
+
+        #new:hover {
+            color: red;
+        }
+
+        input {
+            margin-top: 6px;
+            height: 4vh;
+            width: 18vw;
+        }
+
+        label {
+            font-family: monospace;
+            font-size: 18px;
+        }
+
+        .text-box {
+            margin-left: 44vw;
+            margin-top: 42vh;
+        }
+
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 15px 40px;
+            display: inline-block;
+            border-radius: 100px;
+            transition: all .2s;
+            position: absolute;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white {
+            background-color: #fff;
+            color: #777;
+        }
+
+        .btn::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all .4s;
+        }
+
+        .btn-white::after {
+            background-color: #fff;
+        }
+
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+
+        .btn-animated {
+            animation: moveInBottom 5s ease-out;
+            animation-fill-mode: backwards;
+        }
+
+        @keyframes moveInBottom {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        #log {
+            position: relative;
+            right: 35vw;
+            width: 80px;
+            height: 38px;
+            bottom: 8vh;
+            border-radius: 22px;
+            border: 0;
+            color: black;
+            background: #9da5ae;
+            font-family: system-ui;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+        .forg {
+            position: relative;
+            left: 8vw;
+            top: 44vh;
+        }
+
+
+        footer {
+            width: 100%;
+            background: #e3dcdd;
+            height: 13vh;
+        }
+
+        .comp {
+            font-family: Merienda;
+            font-size: 32px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 35px;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .term {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .pri {
+            padding-top: 2vh;
+            margin-left: 46vw;
+        }
+
+
+        .ab {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        #fa {
+            text-decoration: none;
+            color: black;
+        }
+
+
+
+
+
+        /* Media queries */
+
+        @media screen and (max-width: 1561px) {
+            img {
+                width: 100%;
+                height: 688px;
+                margin-left: 0px;
+            }
+        }
+
+        @media screen and (max-width: 1441px) {
+            img {
+                height: 690px;
+                width: 101%;
+            }
+
+            footer {
+                width: 101%;
+            }
+
+            form {
+                height: 0vh;
+            }
+        }
+
+
+        @media screen and (max-width: 1025px) {
+            img {
+                object-fit: fill;
+                height: 975px;
+            }
+
+            .container {
+                left: 75vw;
+                bottom: 0;
+                width: 25vw;
+            }
+
+            input {
+                width: 21vw;
+                margin-bottom: 1vh;
+            }
+
+            .email {
+                right: 2vw;
+            }
+
+            .password {
+                right: 2vw;
+            }
+
+            footer {
+                width: 127vw;
+            }
+
+            img {
+                width: 127vw;
+            }
+
+            #log {
+                width: 69px;
+                height: 30px;
+            }
+        }
+
+        @media screen and (max-width:815px) {
+            img {
+                width: 129vw;
+            }
+
+            footer {
+                width: 129vw;
+            }
+        }
+
+        @media screen and (max-width: 769px) {
+
+            .pri {
+                margin-left: 13vw;
+            }
+
+            .term {
+                margin-left: 13vw;
+            }
+
+            .ab {
+                margin-left: 13vw;
+            }
+
+            .forg {
+                top: 53vh;
+                font-size: 19px;
+                left: 15vw;
+
+            }
+
+            img {
+                width: 168vw;
+                height: 167vh;
+                object-fit: cover;
+            }
+
+            footer {
+                width: 168vw;
+            }
+
+            .container {
+                left: 94vw;
+                top: 51vh;
+                height: 75vh;
+                width: 50vw;
+            }
+
+            #new {
+                bottom: 39vh;
+            }
+
+            input[type="text"] {
+                font-size: 21px;
+            }
+
+            input[type="password"] {
+                font-size: 21px;
+            }
+
+            input {
+                width: 36vw;
+            }
+
+            h1 {
+                margin-left: 18vw;
+            }
+
+            input {
+                width: 40vw;
+                height: 6vh;
+            }
+
+            label {
+                font-size: 26px;
+            }
+
+
+
+            #log {
+                top: 0vh;
+                width: 13vh;
+                height: 6vh;
+                font-size: 20px;
+                right: 27vw;
+            }
+
+            .nxt {
+                top: 39vh;
+            }
+
+            #new {
+                font-size: 23px;
+            }
+
+            .email {
+                bottom: 53vh;
+                right: 4vw;
+            }
+
+            .password {
+                bottom: 37vh;
+                right: 4vw;
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+
+            .forg {
+                top: 65vh;
+                left: 38vw;
+                font-size: 22px;
+            }
+
+            .comp {
+                font-size: 26px;
+            }
+
+            .container {
+                left: 30vw;
+                top: 16vh;
+                height: 119vh;
+                width: 112vw;
+            }
+
+            h1 {
+                margin-left: 42vw;
+                font-size: 43px;
+            }
+
+            #username {
+                margin-bottom: 2vh;
+            }
+
+            input {
+                width: 90vw;
+                height: 6vh;
+            }
+
+            .email {
+                right: 11vw;
+                bottom: 89vh;
+            }
+
+            .password {
+                right: 11vw;
+                bottom: 73vh;
+            }
+
+            input[type="email"] {
+                font-size: 22px;
+            }
+
+            input[type="password"] {
+                font-size: 22px;
+            }
+
+            .nxt {
+                top: 48vh;
+                right: 10vw;
+            }
+
+            #new {
+                font-size: 25px;
+            }
+
+            #log {
+                right: 18px;
+                top: 7vh;
+                width: 18vh;
+                height: 8vh;
+                font-size: 23px;
+            }
+
+            img {
+                width: 168vw;
+                object-fit: cover;
+                height: 155vh;
+            }
+
+            footer {
+                min-height: 20vh;
+            }
+
+        }
+
+        @media screen and (max-width:375px) {
+            .pri {
+                margin-left: 8vw;
+            }
+
+            .term {
+                margin-left: 8vw;
+            }
+
+            .ab {
+                margin-left: 8vw;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+
+
+            .forg {
+                top: 57vh;
+                left: 36vw;
+                font-size: 19px;
+            }
+
+            .container {
+                height: 105vh;
+            }
+
+            .email {
+                bottom: 78vh;
+            }
+
+            .password {
+                bottom: 64vh;
+            }
+
+            h1 {
+                margin-left: 37vw;
+                font-size: 40px;
+            }
+
+            label {
+                font-size: 23px;
+            }
+
+            input[type="email"] {
+                font-size: 18px;
+            }
+
+            input[type="password"] {
+                font-size: 18px;
+            }
+
+            .nxt {
+                top: 42vh;
+            }
+
+            #new {
+                font-size: 21px;
+            }
+
+            #log {
+                top: 0vh;
+                width: 15vh;
+                height: 7vh;
+                font-size: 20px;
+            }
+
+            footer {
+                margin-top: 3vh;
+                height: 14vh;
+            }
+
+        }
+    </style>
+    <title>Login | Blogsite</title>
+</head>
+
+<body>
+    <img src="{% static 'static/img/background(1).jpg' %}" alt="">
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            {% csrf_token %}
+            <div class="email">
+                <label for="username">Email</label>
+                <br>
+                <input type="email" id="username" name="username" placeholder="Enter your email" required>
+            </div>
+            <div class="password">
+                <label for="email">Password</label>
+                <br>
+                <input type="password" id="password" name="password" placeholder="password" required>
+            </div>
+            <div class="nxt">
+                <a href="/new" id="new">create new account..</a>
+            </div>
+            <span class="forg">
+                <a href="{% url 'reset_password' %}" id="forget">Forget password</a>
+            </span>
+            <div class="text-box">
+                <!-- <a type="submit" href="#" id="log" class="btn btn-white btn-        animate">Login</a> -->
+                <button type="submit" id="log" class="btn btn-white btn-        animate">Login</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div class="comp">Blogsite</div>
+        <div class="pri"> <a class="non" href="privacypolicy">Privacy Policy</a></div>
+        <div class="term"> <a class="non" href="termcondition">Terms and Conditions</a></div>
+        <div class="ab"> <a class="non" href="about_us">About us</a></div>
+    </footer>
+
+</body>
+
+</html>

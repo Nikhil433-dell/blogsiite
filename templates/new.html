@@ -1,0 +1,709 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/new.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .img {
+            background-image: url("https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZyUyMGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+            background-size: cover;
+            width: 100%;
+            height: 126vh;
+        }
+
+        .username {
+            margin-top: 35px;
+        }
+
+        h1#title span span {
+            font-weight: 400;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            color: white;
+            font-weight: 400;
+            letter-spacing: 1px;
+            font-size: 1.4em;
+            line-height: 2.8em;
+        }
+
+        .box-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 4vw;
+        }
+
+
+        /* Layout */
+
+
+
+        .login-box {
+            height: 64vh;
+            background-color: white;
+            width: 22vw;
+            margin: 0 auto;
+            position: relative;
+            top: 13vh;
+            padding-bottom: 30px;
+            left: 40px;
+            border-radius: 5px;
+            box-shadow: 0 5px 50px rgb(0 0 0 / 40%);
+        }
+
+        .login-box .box-header {
+            background-color: #50a3bd;
+            margin-top: 0;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .login-box label {
+            /* font-weight: bolder; */
+            color: black;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        .login-box input {
+            margin-bottom: 20px;
+            padding: 8px;
+            font-size: .9em;
+            color: #888;
+        }
+
+        .login-box input:focus {
+            outline: none;
+            border-color: #665851;
+            transition: 0.5s;
+            color: #665851;
+        }
+
+        label {
+            margin-left: 30px;
+            font-family: Acme;
+        }
+
+        input {
+            margin-left: 30px;
+            width: 16vw;
+        }
+
+        .fname {
+            margin-top: 10px;
+        }
+
+
+        .text-box {
+            margin-left: 44vw;
+            margin-top: 42vh;
+        }
+
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 15px 40px;
+            display: inline-block;
+            border-radius: 100px;
+            transition: all .2s;
+            position: absolute;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white {
+            background-color: #fff;
+            color: #777;
+        }
+
+        .btn::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all .4s;
+        }
+
+        .btn-white::after {
+            background-color: #fff;
+        }
+
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+
+        .btn-animated {
+            animation: moveInBottom 5s ease-out;
+            animation-fill-mode: backwards;
+        }
+
+        @keyframes moveInBottom {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        #log {
+            position: relative;
+            right: 565px;
+            width: 80px;
+            height: 38px;
+            bottom: 41vh;
+            border-radius: 22px;
+            border: 0;
+            color: black;
+            background: #6bb4d0;
+            font-family: system-ui;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .mesg {
+            background: #b6a78d;
+            height: 37px;
+        }
+
+        .msg {
+            color: black;
+            /* margin-top: 15px; */
+            position: relative;
+            top: 9px;
+            left: 21px;
+            font-size: 18px;
+            font-family: monospace;
+        }
+
+        /* MEDIS QUERIES */
+
+        @media screen and (max-width: 1561px) {
+            #log {
+                right: 558px;
+            }
+
+            .username {
+                margin-left: 14px;
+            }
+
+            .email {
+                margin-left: 14px;
+            }
+
+            .password {
+                margin-left: 14px;
+            }
+
+            .confirm_password {
+                margin-left: 14px;
+            }
+
+            .login-box {
+                height: 72vh;
+            }
+
+        }
+
+        @media screen and (max-width: 1441px) {
+            .username {
+                margin-left: 0;
+            }
+
+            .email {
+                margin-left: 0;
+            }
+
+            .password {
+                margin-left: 0;
+            }
+
+            .confirm_password {
+                margin-left: 0;
+            }
+
+            #log {
+                right: 516px;
+            }
+
+            .msg {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 1025px) {
+            .login-box {
+                /* max-width: 0; */
+                width: 30vw;
+            }
+
+            #log {
+                right: 339px;
+            }
+
+            input {
+                width: 21vw;
+            }
+
+            .username {
+                margin-left: 9px;
+            }
+
+            .email {
+                margin-left: 9px;
+            }
+
+            .password {
+                margin-left: 9px;
+            }
+
+            .confirm_password {
+                margin-left: 9px;
+            }
+
+            #log {
+                right: 339px;
+            }
+
+            .login-box {
+                height: 68vh;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            #log {
+                right: 268px;
+            }
+
+            .box-header {
+                height: 6vh;
+            }
+
+            input {
+                height: 2vh;
+            }
+
+            .username {
+                position: relative;
+                right: 15px;
+            }
+
+            .email {
+                position: relative;
+                right: 15px;
+            }
+
+            .password {
+                position: relative;
+                right: 15px;
+            }
+
+            .confirm_password {
+                position: relative;
+                right: 15px;
+            }
+
+            .msg {
+                left: 9px;
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+            .login-box {
+                width: 67vw;
+                height: 73vh;
+                left: 0;
+            }
+
+            #log {
+                right: 92px;
+            }
+
+            .box-header {
+                height: 11vw;
+            }
+
+            input {
+                width: 47vw;
+            }
+
+            .username {
+                right: 7px;
+            }
+
+            .email {
+                right: 7px;
+            }
+
+            .password {
+                right: 7px;
+            }
+
+            .confirm_password {
+                right: 7px;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+
+            .msg {
+                font-size: 11px;
+            }
+
+            .login-box {
+                height: 58vh;
+            }
+
+            .username {
+                right: 19px;
+            }
+
+            .email {
+                right: 19px;
+            }
+
+            .password {
+                right: 19px;
+            }
+
+            .confirm_password {
+                right: 19px;
+            }
+
+            #log {
+                right: 68px;
+                width: 19vw;
+                height: 4vh;
+                font-size: 11px;
+            }
+
+            input {
+                height: 1vh;
+            }
+
+            .login-box label {
+                font-size: 12px;
+            }
+
+            input[type="text"] {
+                font-size: 11px;
+            }
+
+            input[type="email"] {
+                font-size: 11px;
+            }
+
+            input[type="password"] {
+                font-size: 11px;
+            }
+        }
+
+        .mesg {
+            background-color: rgba(500, 100, 93, 0.4);
+        }
+
+        footer {
+            width: 100%;
+            background: #e3dcdd;
+            height: 13vh;
+        }
+
+        .comp {
+            font-family: Merienda;
+            font-size: 32px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 35px;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .term {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .pri {
+            padding-top: 2vh;
+            margin-left: 46vw;
+        }
+
+
+        .ab {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        #fa {
+            text-decoration: none;
+            color: black;
+        }
+
+        #log {
+            right: 36vw;
+        }
+
+
+        @media screen and (max-width: 1024px) {
+            footer {
+                width: 127vw;
+            }
+
+            .img {
+                width: 127%;
+            }
+
+            #log {
+                right: 33vw;
+            }
+
+            .login-box input {
+                margin-bottom: 21px;
+            }
+        }
+
+
+
+        @media screen and (max-width:815px) {
+            footer {
+                width: 129vw;
+            }
+        }
+
+
+        @media screen and (max-width:769px) {
+            footer {
+                width: 168vw;
+            }
+
+            .pri {
+                margin-left: 13vw;
+            }
+
+            .term {
+                margin-left: 13vw;
+            }
+
+            .ab {
+                margin-left: 13vw;
+            }
+
+            .login-box input[type="email"] {
+                font-size: 20px;
+            }
+
+            .login-box input[type="text"] {
+                font-size: 20px;
+            }
+
+            .login-box input[type="password"] {
+                font-size: 20px;
+            }
+
+            #log {
+                width: 13vw;
+                font-size: 18px;
+                right: 27vw;
+                height: 6vh;
+            }
+
+            .username {
+                right: 0;
+            }
+
+            .email {
+                right: 0;
+            }
+
+            .login-box label {
+                font-size: 20px;
+            }
+
+            #pass2 {
+                margin-top: 2px;
+            }
+
+            .login-box input {
+                width: 35vw;
+                height: 4vh;
+            }
+
+            .password {
+                right: 0;
+            }
+
+            .confirm_password {
+                right: 0;
+            }
+
+            .box-header {
+                height: 9vh;
+            }
+
+            h2 {
+                font-size: 2.4em;
+            }
+
+            .img {
+                width: 168%;
+                height: 155vh;
+            }
+
+            .login-box {
+                width: 49vw;
+                height: 101vh;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+            .comp {
+                font-size: 26px;
+            }
+
+            .login-box {
+                width: 105vw;
+            }
+
+            .login-box input {
+                width: 74vw;
+            }
+
+            #pass1 {
+                margin-top: 2px;
+            }
+
+            #log {
+                width: 23vw;
+                font-size: 20px;
+                right: 7vw;
+                height: 7vh;
+                bottom: 36vh;
+                margin-bottom: 10vh;
+            }
+
+            footer {
+                min-height: 20vh;
+            }
+
+            .login-box{
+                min-height: 114vh;
+            }
+        }
+
+        @media screen and (max-width:375px) {
+            .pri {
+                margin-left: 8vw;
+            }
+
+            .term {
+                margin-left: 8vw;
+            }
+
+
+            .ab {
+                margin-left: 8vw;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            #log {
+                width: 30vw;
+                right: 11vw;
+            }
+
+            .login-box input {
+                margin-top: 1px;
+            }
+        }
+    </style>
+    <title>Create an account | Blogsite</title>
+</head>
+
+<body>
+    <div class="img">
+        <div id="box" class="login-box animated fadeInUp">
+
+            <div class="box-header">
+                <h2>Sign In</h2>
+            </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                {% if messages %}
+                <div class="mesg">
+                    {% for message in messages %}
+                    <span class="msg">{{message}}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="username">
+                    <label for="lname">Username</label>
+                    <br />
+                    <input type="text" id="username" name="username" placeholder="eg: john#123" required>
+                </div>
+                <div class="email">
+                    <label for="email">Email adress</label>
+                    <br />
+                    <input type="email" id="email" name="email" placeholder="eg: john@123.com" required>
+                </div>
+                <div class="password">
+                    <label for="pass2">Password</label>
+                    <br />
+                    <input type="password" id="pass1" name="pass1" placeholder="Enter a strong password" required>
+                </div>
+                <div class="confirm_password">
+                    <label for="pass2">Confirm Password</label>
+                    <br />
+                    <input type="password" id="pass2" name="pass2" placeholder="Enter the same password" required>
+                </div>
+                <div class="text-box">
+                    <button type="submit" id="log" class="btn btn-white btn-        animate">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="comp">Blogsite</div>
+        <div class="pri"> <a class="non" href="privacypolicy">Privacy Policy</a></div>
+        <div class="term"> <a class="non" href="termcondition">Terms and Conditions</a></div>
+        <div class="ab"> <a class="non" href="about_us">About us</a></div>
+    </footer>
+</body>
+
+</html>

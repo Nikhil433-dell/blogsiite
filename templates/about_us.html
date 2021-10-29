@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us | Blogsite</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;1,300&display=swap');
+
+        #ma {
+            text-decoration: none;
+            color: black;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            ;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        nav ul {
+            background-color: #dedede;
+            height: 8vh;
+            width: 100%;
+        }
+
+        .li1 {
+            float: left;
+            height: 7vh;
+            width: 13vw;
+            display: flex;
+            align-items: center;
+            font-family: Merienda;
+            font-size: 41px;
+            justify-content: center;
+            padding-top: 0px;
+            float: left;
+            cursor: pointer;
+        }
+
+        #contact {
+            position: relative;
+            cursor: pointer;
+            top: 16px;
+            left: 63vw;
+            transition: all .2s ease-in-out;
+            font-family: 'Acme';
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+        }
+
+        .container {
+            width: 69vw;
+            padding-bottom: 14vh;
+            margin-left: 14vw;
+            box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+            background-color: white;
+        }
+
+        main {
+            background: whitesmoke;
+        }
+
+        footer {
+            background: #e3dcdd;
+            height: 15vh;
+            width: 100%;
+        }
+
+        .comp {
+            font-family: Merienda;
+            font-size: 32px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 35px;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .term {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .pri {
+            padding-top: 2vh;
+            margin-left: 46vw;
+        }
+
+
+        .ab {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        #fa {
+            text-decoration: none;
+            color: black;
+        }
+
+        .img {
+            height: auto;
+            width: 54vw;
+            margin-left: 7vw;
+        }
+
+        p {
+            margin-left: 9vw;
+            width: 50vw;
+            margin-top: 4vh;
+            font-size: 20px;
+            font-family: system-ui;
+        }
+
+        .cal {
+            font-family: 'system-ui';
+        }
+
+        h1 {
+            margin-left: 28vw;
+            margin-top: 7vh;
+            font-family: 'Raleway';
+        }
+
+        #goal{
+            margin-top: 0;
+            margin-left: 30vw;
+        }
+
+
+        @media screen and (max-width:1440px) {
+            .li1 {
+                margin-left: 4vw;
+            }
+        }
+
+        @media screen and(max-width:1024px) {
+            .li1 {
+                margin-left: 3vw;
+            }
+
+            #contact {
+                left: 54vw;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            .pri {
+                margin-left: 13vw;
+            }
+
+            .term {
+                margin-left: 13vw;
+            }
+
+            .ab {
+                margin-left: 13vw;
+            }
+
+            .li1 {
+                margin-left: 10vw;
+            }
+
+            #contact {
+                left: 44vw;
+            }
+
+            p{
+                width: 53vw;
+    margin-top: 4vh;
+    font-size: 17px;
+            }
+
+            h1{
+                margin-left: 24vw;
+            }
+
+            #goal{
+                margin-left: 26vw;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+            .li1 {
+                font-size: 27px;
+            }
+
+            #contact {
+                font-size: 18px;
+            }
+
+            .non {
+                font-size: 11px;
+            }
+
+            h1 {
+                font-size: 14pt;
+            }
+
+            p {
+                font-size: 11px;
+            }
+
+            li {
+                font-size: 12px;
+            }
+
+        }
+
+        @media screen and (max-width:375px) {
+            #contact {
+                left: 40vw;
+            }
+
+            #ma{
+    font-size: 23px;
+            }
+
+            h1{
+                margin-left: 21vw;
+            }
+
+            #ab{
+                margin-left: 24vw;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            footer {
+                height: 14vh;
+            }
+
+            .li1 {
+                margin-left: 12vw;
+            }
+
+            h1{
+                margin-left: 18vw;
+            }
+
+            #ab{
+                margin-left: 21vw;
+    margin-top: 3vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div class="li1"> <a id="ma" href="/index"> Blogsite</a></div>
+                <span><a href="" id="contact">About us</a></span>
+                </div>
+            </ul>
+    </header>
+    <main>
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1169&q=80" alt="" class="img">
+            <h1 id="ab" >About us</h1>
+            <p>Welcome, we are good to see you here. Nowadays, Everyone is busy with going seconds off the clock and it
+                becomes very tough to spare time for your thoughts. Our website mainly seeks to create another world of
+                blogs where we can pursue the good habit of reading and writing. History is the evidence where we have
+                seen that a pen has the power to compete with swords. It is just a means to bring changes in society and
+                to remove the flaws. It’s not a single person’s concern, we all together dare to change it and we will….
+            </p>
+            <h1>Our Purpose</h1>
+            <p class="cal">The ultimate purpose of writing blogs is to share your thoughts. If you want to be heard and
+                exchange with people who really enjoy the conversation. This platform will prove to be the best for you.
+                Besides Like, Comment, and Following APIs that exists in social network, we provide you a space to
+                question and answer others’ thoughts in the form of a blog that is unique and provided by our website.
+                This is just like we will be interacting with each other in the form of a blog. <br><br>
+            </p>
+            <h1 id="goal">Our Goal</h1>
+            <p class="cal">
+                Our future goal is to make a big family of writers where everyone can share their thinking. We want to
+                make
+                a big change in this busy world to increase the lifetime and to bring a power of next-level mind to get
+                unique. <br><br>
+
+                Hope you are going to enjoy our Blogsite... <br><br>
+
+                Please give us a little feedback for better understandings and making better your experience.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <div class="comp">Blogsite</div>
+        <div class="pri"> <a class="non" href="privacypolicy">Privacy Policy</a></div>
+        <div class="term"> <a class="non" href="termcondition">Terms and Conditions</a></div>
+        <div class="ab"> <a class="non" href="about_us">About us</a></div>
+    </footer>
+
+</body>
+
+</html>

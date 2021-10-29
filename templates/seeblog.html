@@ -1,0 +1,1165 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            background-color: #dedede;
+            height: 8vh;
+            width: 100%;
+        }
+
+        .li1 {
+            float: left;
+            cursor: pointer;
+        }
+
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #contact {
+            position: relative;
+            cursor: pointer;
+            top: 16px;
+            left: 51px;
+            transition: all .2s ease-in-out;
+            font-family: 'Acme';
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+        }
+
+        #contact:hover {
+            transform: scale(2.1);
+        }
+
+        .li1 {
+            float: left;
+            height: 7vh;
+            width: 13vw;
+            display: flex;
+            align-items: center;
+            font-family: Merienda;
+            font-size: 41px;
+            justify-content: center;
+            padding-top: 0px;
+        }
+
+        .user {
+            max-height: 3vh;
+            float: right;
+            margin-right: 9vw;
+            position: relative;
+            top: 3vh;
+            font-family: 'Acme';
+            font-size: 19px;
+        }
+
+        #img {
+            width: 3vw;
+            height: 6vh;
+            border-radius: 60px;
+            position: absolute;
+            left: 91vw;
+            top: 7px;
+            background-size: cover;
+            border: 1px solid #8c8484;
+        }
+
+        /* Dropdown Button */
+
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            left: 85vw;
+            top: 55px;
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {
+            display: block;
+        }
+
+        #drop {
+            width: 19px;
+            cursor: pointer;
+            position: absolute;
+            left: 94vw;
+            top: 40px;
+        }
+
+
+        .blogpost:hover {
+            transform: scale(1.1);
+        }
+
+
+        .bord {
+            overflow: hidden;
+            max-height: 49vh;
+            width: 64vw;
+            background-color: white;
+            border-radius: 9px;
+            margin-top: 12vh;
+            margin-left: 17vw;
+            margin-bottom: 12vh;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            box-shadow: 0px 3px 16px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .name {
+            max-height: 9vh;
+            overflow: hidden;
+            width: 59vw;
+            margin-top: 26px;
+            margin-left: 43px;
+            font-size: 28px;
+        }
+
+        .container {
+            overflow: hidden;
+            margin-left: 45px;
+            max-width: 59vw;
+            height: 16vh;
+            max-height: 17vh;
+            margin-top: 14px;
+            font-family: -webkit-pictograph;
+            font-size: 16px;
+            text-overflow: ellipsis;
+        }
+
+
+        .author {
+            margin-top: 6px;
+            margin-left: 44px;
+            font-family: system-ui;
+        }
+
+        .cat {
+            margin-top: 6px;
+            margin-left: 44px;
+            font-family: system-ui;
+            font-weight: 500;
+        }
+
+        .likes {
+            width: 37px;
+            position: relative;
+            left: 78px;
+            top: 12px;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+        }
+
+        #respdrop {
+            display: none;
+            width: 19px;
+            cursor: pointer;
+            position: absolute;
+            left: 94vw;
+            top: 40px;
+        }
+
+        .feedback {
+            display: none;
+        }
+
+        .viewprofile {
+            display: none;
+        }
+
+        .logout {
+            display: none;
+        }
+
+
+        .comments {
+            position: relative;
+            left: 228px;
+            bottom: 48px;
+            width: 47px;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .like {
+
+            position: relative;
+            top: 8px;
+            left: 73px;
+            font-weight: bold;
+            font-family: Raleway;
+        }
+
+
+        .likes:hover {
+            transform: scale(1.1);
+        }
+
+        .comments:hover {
+            transform: scale(1.1);
+        }
+
+        .comment {
+            font-weight: bold;
+            font-family: Raleway;
+            left: 216px;
+            bottom: 60px;
+            width: 19vh;
+            position: relative;
+        }
+
+        .hide {
+            background: white;
+            height: 50px;
+            position: absolute;
+            width: 48px;
+        }
+
+        .mar {
+            height: 1px;
+        }
+
+        .modal_head {
+            font-size: 27px;
+            font-family: 'Raleway';
+            font-weight: bold;
+            margin-left: 18px;
+            margin-bottom: 5px;
+        }
+
+        .mainq {
+            font-family: Roboto;
+            margin-left: 20px;
+            margin-top: 12px;
+            font-size: 18px;
+        }
+
+        .img1 {
+            height: 8vh;
+        }
+
+
+        #search {
+            height: 8vh;
+            position: relative;
+            margin-top: -34px;
+            top: 20px;
+            right: 4vw;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+        }
+
+
+        .img1 {
+            float: right;
+            margin-right: 25px;
+            margin-left: 12px;
+        }
+
+
+        #inpu {
+
+            position: relative;
+            left: 42vw;
+            bottom: 21px;
+        }
+
+        input {
+            height: 4vh;
+            width: 238px;
+            transition-property: width, height;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
+        }
+
+
+        input[type="text"] {
+            font-size: 18px;
+            padding-left: 5px;
+            color: black;
+        }
+
+        input[type="email"] {
+            font-size: 18px;
+            padding-left: 5px;
+            color: black;
+        }
+
+        .btn {
+            position: relative;
+            left: 45vw;
+            width: 41px;
+            bottom: 17px;
+            background-color: transparent;
+            border: 0;
+        }
+
+        .reading {
+            width: 14vw;
+            height: 5vh;
+            transition: all .2s ease-in-out;
+            position: relative;
+            border: 0;
+            left: 42vw;
+            bottom: 12vh;
+            border-radius: 37px;
+            background-color: #7bc5f5;
+            cursor: pointer;
+        }
+
+        .reading:hover {
+            transform: scale(1.1);
+        }
+
+        .cont {
+            text-decoration: none;
+            color: black;
+            font-size: 19px;
+            font-family: cursive;
+        }
+
+        .ans {
+            position: relative;
+            bottom: 52vh;
+            left: 43vw;
+            transition: all .2s ease-in-out;
+            height: 4vh;
+            width: 36px;
+            background: #e8e874;
+            padding-top: 6px;
+            padding-left: 8px;
+            font-size: 22px;
+            font-family: monospace;
+            border-radius: 30px;
+        }
+
+        .ans:hover {
+            transform: scale(1.1);
+        }
+
+        .qes {
+            padding-top: 6px;
+            padding-left: 8px;
+            transition: all .2s ease-in-out;
+            font-size: 22px;
+            font-family: monospace;
+            position: relative;
+            bottom: 444px;
+            height: 4vh;
+            width: 36px;
+            background: #9a8dff;
+            border-radius: 30px;
+            left: 56vw;
+        }
+
+        .qes:hover {
+            transform: scale(1.1);
+        }
+
+        .an {
+            text-decoration: none;
+            color: black;
+        }
+
+        .rep {
+            position: relative;
+            left: 655px;
+            bottom: 394px;
+            width: 8vw;
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .ser {
+            height: 24vh;
+        }
+
+
+        .see {
+            position: relative;
+            left: 868px;
+            bottom: 444px;
+            width: 8vw;
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .AZ {
+            text-decoration: none;
+            color: black;
+        }
+
+        .AZ:hover {
+            text-decoration: underline;
+        }
+
+        .go {
+            text-decoration: none;
+            color: black;
+        }
+
+        #ma {
+            text-decoration: none;
+            color: black;
+        }
+
+        .recent {
+            position: relative;
+            top: 8vh;
+            font-family: 'Raleway';
+            left: 40vw;
+            font-size: 32px;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        #writer {
+            text-decoration: none;
+            color: black;
+            font-family: 'Acme';
+            position: relative;
+            left: 8vw;
+            top: 2vh;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .ing {
+            left: 28vw;
+            width: 59vw;
+        }
+
+        footer {
+            background: #e3dcdd;
+            height: 13vh;
+            width: 100%;
+        }
+
+        main {
+            min-height: 82vh;
+        }
+
+        .comp {
+            font-family: Merienda;
+            font-size: 32px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 35px;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .term {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .pri {
+            padding-top: 2vh;
+            margin-left: 46vw;
+        }
+
+
+        .ab {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        #fa {
+            text-decoration: none;
+            color: black;
+        }
+
+        #likeicon {
+            position: relative;
+            left: 2vw;
+            color: black;
+            top: 2vh;
+        }
+
+        #chaticon {
+            position: relative;
+            color: black;
+            right: 7vw;
+            top: 5vh;
+        }
+
+        @media screen and (max-width:1560px) {
+            .container {
+                height: 15vh;
+            }
+
+            footer {
+                height: 16vh;
+            }
+
+            .user {
+                margin-right: 10vw;
+            }
+        }
+
+        @media screen and (max-width:1440px) {
+            #inpu {
+                left: 27vw;
+            }
+
+            #search {
+                right: 18vw;
+            }
+
+            .blogpost {
+                font-size: 17px;
+            }
+        }
+
+        @media screen and (max-width:1192px) {
+            .li1 {
+                margin-left: 2vw;
+            }
+
+            .cont {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width:1024px) {
+            #chaticon {
+                right: 11vw;
+            }
+
+            .blogpost {
+                font-size: 15px;
+            }
+
+            .user {
+                font-size: 15px;
+                margin-right: 11vw;
+            }
+
+            #img {
+                width: 4vw;
+                left: 90vw;
+            }
+
+            .ing {
+                font-size: 25px;
+                left: 26vw;
+                width: 60vw;
+            }
+        }
+
+        @media screen and (max-width:932px) {
+            #chaticon {
+                right: 12vw;
+            }
+
+            .blogpost {
+                width: 11vw;
+            }
+
+            .bord{
+                max-height: 45vh;
+            }
+
+            .comments {
+                width: 36px;
+                bottom: 42px;
+            }
+
+            .likes {
+                width: 29px;
+            }
+
+            .comment {
+                bottom: 51px;
+                font-size: 14px;
+            }
+
+            .like {
+                font-size: 14px;
+            }
+
+            .cont {
+                font-size: 14px;
+            }
+
+            .reading {
+    bottom: 13vh;
+}
+
+            .recent {
+                font-size: 22px;
+    left: 38vw;
+            }
+
+            .li1 {
+                font-size: 30px;
+                margin-left: 1vw;
+            }
+        }
+
+        @media screen and (max-width:1024px) {
+            .show {
+                left: 82vw;
+            }
+            .recent{
+                left: 36vw;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            #chaticon {
+                right: 11vw;
+            }
+
+            .non {
+                font-size: 12px;
+            }
+
+            .li1 {
+                margin-left: 2vw;
+            }
+
+            #contact {
+                font-size: 17px;
+                top: 19px;
+                left: 38px;
+            }
+
+            #writer {
+                font-size: 15px;
+                left: 8vw;
+                top: 17px;
+            }
+
+            #inpu {
+                width: 18vw;
+                bottom: 10px;
+            }
+
+            #search {
+                top: 2vh;
+            }
+
+            #img {
+                width: 6vw;
+                left: 89vw;
+            }
+
+            #drop {
+                left: 95vw;
+            }
+
+            .user {
+                bottom: 5vh;
+                margin-right: 12vw;
+            }
+
+            .show {
+                left: 77vw;
+            }
+
+            .recent {
+                font-size: 22px;
+            }
+
+            .name {
+                font-size: 22px;
+                height: 52px;
+                width: 56vw;
+            }
+
+            .author {
+                font-size: 12px;
+            }
+
+            .container {
+                font-size: 12px;
+                max-width: 53vw;
+                height: 14vh;
+            }
+
+            .likes {
+                left: 45px;
+            }
+
+            .like {
+                left: 41px;
+            }
+
+            .comments {
+                left: 148px;
+            }
+
+            .comment {
+                bottom: 47px;
+                left: 136px;
+            }
+
+            .reading {
+                bottom: 13vh;
+                width: 18vw;
+                height: 4vh;
+                left: 38vw;
+            }
+
+            .bord {
+                max-height: 44vh;
+            }
+
+            #mem {
+                display: none;
+            }
+
+            .ing {
+                font-size: 23px;
+                left: 23vw;
+                width: 69vw;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+            .non {
+                font-size: 11px;
+            }
+
+            #chaticon {
+                right: 20vw;
+                top: 3vh;
+            }
+
+            #likeicon {
+                top: 0;
+            }
+
+            .pri {
+                padding-top: 3vh;
+                margin-left: 2vw;
+            }
+
+            .term {
+                margin-top: 0vh;
+                margin-left: 2vw;
+            }
+
+            .ab {
+                margin-top: 0vh;
+                margin-left: 2vw;
+            }
+
+            .name {
+                margin-top: 2vh;
+                margin-left: 4vw;
+                font-size: 18px;
+                height: 6vh;
+            }
+
+            .author {
+                margin-left: 4vw;
+                font-size: 10px;
+                width: 56vw;
+            }
+
+            .cat {
+                margin-left: 4vw;
+                font-size: 11px;
+            }
+
+            .container {
+                margin-left: 4vw;
+                margin-top: 1vh;
+                height: 16vh;
+            }
+
+            .likes {
+                width: 5vw;
+                left: 7vw;
+            }
+
+            .like {
+                left: 5vw;
+                font-size: 12px;
+            }
+
+            .comments {
+                display: none;
+            }
+
+            .comment {
+                display: none;
+            }
+
+            .reading {
+                bottom: 4vh;
+                width: 27vw;
+                height: 3vh;
+                left: 25vw;
+            }
+
+            .cont {
+                font-size: 11px;
+            }
+
+            .recent {
+                font-size: 18px;
+    left: 29vw;
+                width: 70vw;
+            }
+
+            .blogpost {
+                width: 20vw;
+                height: 4vh;
+                margin-bottom: 2vh;
+                font-size: 13px;
+            }
+
+            .li1 {
+                margin-left: 6vw;
+                font-size: 21px;
+            }
+
+            #contact {
+                display: none;
+            }
+
+            #img {
+                left: 83vw;
+                width: 10vw;
+            }
+
+            .feedback {
+                display: block;
+                position: relative;
+                top: 7vh;
+                left: -13vw;
+                font-size: 15px;
+                font-family: 'Acme';
+            }
+
+            .viewprofile {
+                display: block;
+                position: relative;
+                font-size: 15px;
+                top: 9vh;
+                left: -13vw;
+                font-family: 'Acme';
+            }
+
+            .logout {
+                display: block;
+                font-size: 15px;
+                position: relative;
+                font-family: 'Acme';
+                top: 11vh;
+                left: 6vw;
+            }
+
+            #inpu {
+                bottom: 0;
+                top: 5vh;
+                height: 3vh;
+                left: -15vw;
+                width: 40vw;
+            }
+
+            .user {
+                display: none;
+            }
+
+            #search {
+                top: 8vh;
+                right: 58vw;
+            }
+
+            nav ul {
+                overflow: hidden;
+            }
+
+            #drop {
+                left: 92vw;
+                display: none;
+            }
+
+            .onav {
+                font-size: 15px;
+                color: black;
+            }
+
+            #myDropdown {
+                display: none;
+            }
+
+            #writer {
+                left: 10vw;
+            }
+
+            #respdrop {
+                display: block;
+            }
+
+            footer{
+                min-height: 20vh;
+            }
+
+        }
+
+        @media screen and (max-width:375px) {
+            footer {
+                margin-top: 30vh;
+            }
+
+            #chaticon {
+                right: 22vw;
+            }
+
+            #img {
+                width: 11vw;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+
+            footer {
+                margin-top: 27vh;
+                height: 14vh;
+            }
+
+            #img {
+                width: 14vw;
+                left: 77vw;
+            }
+
+            #respdrop {
+                left: 90vw;
+            }
+
+            .li1 {
+                margin-left: 10vw;
+                font-size: 24px;
+            }
+
+            #inpu {
+                left: -17vw;
+                width: 45vw;
+            }
+
+            #search {
+                right: 64vw;
+            }
+
+            .feedback {
+                left: -17vw;
+            }
+
+            #writer {
+                left: 16vw;
+                top: 18px;
+            }
+
+            .blogpost {
+                width: 28vw;
+                left: 18vw;
+            }
+
+            .recent {
+                font-size: 16px;
+    left: 26vw;
+            }
+
+            #chaticon {
+                right: 27vw;
+            }
+
+            .comp {
+                font-size: 28px;
+                margin-top: 0px;
+                margin-right: 23px;
+            }
+
+            footer {
+                height: 17vh;
+                padding-top: 2vh;
+            }
+
+            .reading {
+                width: 32vw;
+                bottom: 3vh;
+            }
+
+            .viewprofile {
+                left: -17vw;
+            }
+        }
+    </style>
+    <title>Blogsite</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="nave">
+                <div class="li1"> <a id="ma" href="/index"> Blogsite</a></div>
+                <span><a href="feedback" id="contact">Feedback</a></span>
+                <span><a href="/writers" id="writer">Writers</a></span>
+                <div class="feedback"><a class="onav" href="feedback">Feedback</a></div>
+                <div class="viewprofile"><a class="onav" href="{% url 'user-profile' user.id %}">View profile</a></div>
+                <div class="logout"><a class="onav" href="/logout">Logout</a></div>
+                <p class="user">{{request.user}}</p>
+                <div class="dropdown">
+                    <div class="drop" onclick="dropdown()">
+                        {% if user.profile.pro_img %}
+                        <div id="img" style="background-image: url('{{user.profile.pro_img.url}}');"></div>
+                        {% else %}
+                        <div id="img" style="background-image: url('{% static 'img/profile.png'  %}');"></div>
+                        {% endif %}
+                        <img id="drop" src="/static/img/down.png" class="dropbtn" alt="">
+                    </div>
+                    <img id="respdrop" onclick="menu()" src="/static/img/down.png" class="dropbtn" alt="">
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="{% url 'user-profile' user.id %}">View profile</a>
+                        <a href="/writers" name="logout">Writers</a>
+                        <a href="feedback" name="logout">Feedback</a>
+                        <a href="/logout" name="logout">Logout</a>
+                    </div>
+                </div>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            {% if blog %}
+            <dv class="recent">ANSWERED BLOGS</dv>
+            {% for blog in blog %}
+            <div class="bord">
+                <div class="mar"></div>
+                <div class="name"> <a class="AZ" href="{% url 'main' blog.pk  %}"> {{blog.topic_name}} </a> </div>
+                <div class="author">{{blog.created}} by {{blog.writer_name}}
+                    {% if blog.writer_name == request.user %}
+                    <a id="view" href="{% url 'user-profile' user.id %}"> view profile</a>
+                    {% else %}
+                    <a id="view" href="{% url 'view-profile' blog.writer_name.id %}"> view profile</a>
+                    {% endif %}
+                </div>
+                <div class="cat">Category: {{blog.category}}</div>
+                <div class="container">{{blog.desc}}</div>
+                <div class="lcs">
+                    <form action="{% url 'like-post' %}" method="POST" class='like-form' id='{{blog.id}}'>
+                        {% csrf_token %}
+                        <input type="hidden" name="post_id" value={{blog.id}}>
+
+                        <div class="hide"></div>
+                        {% if profile not in blog.liked.all %}
+                        <button type="submit" class="visi ui button like-btn{{blog.id}}">
+                            <img src="https://img.icons8.com/external-sbts2018-blue-sbts2018/58/000000/external-like-social-media-basic-1-sbts2018-blue-sbts2018.png"
+                                class="likes" />
+                        </button>
+                        {% else %}
+                        {% endif %}
+                        <div class="ui grid">
+                            <div class="like like-count{{blog.id}}">{{blog.num_likes}} Likes</div>
+                        </div>
+                    </form>
+                    <a href="{% url 'main' blog.pk %}">
+                        <img src="https://img.icons8.com/color/48/000000/speech-bubble-with-dots.png"
+                            class="comments" />
+                    </a>
+                    <div class="comment">Comment</div>
+                </div>
+                <button class="reading">
+                    <a href="{% url 'main' blog.pk %}" class="cont">Continue Reading</a>
+                </button>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="recent ing ">There is no answer to this blog's question</div>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <a href="https://icons8.com/icon/fegRwtygh3B0/like" class="non" id="likeicon">Like icon by Icons8</a>
+        <a href="https://icons8.com/icon/108791/chat-bubble" class="non" id="chaticon">Chat Bubble icon by Icons8</a>
+        <div class="comp">Blogsite</div>
+        <div class="pri"> <a class="non" href="/privacypolicy">Privacy Policy</a></div>
+        <div class="term"> <a class="non" href="/termcondition">Terms and Conditions</a></div>
+        <div class="ab"> <a class="non" href="/about_us">About us</a></div>
+    </footer>
+
+
+
+</body>
+<script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    function dropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function menu() {
+        document.getElementById("nave").classList.toggle("ser");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | Blogsite</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            background-color: #dedede;
+            height: 8vh;
+            width: 100%;
+        }
+
+        .li1 {
+            float: left;
+            cursor: pointer;
+        }
+
+        .li1 {
+            float: left;
+            height: 7vh;
+            width: 13vw;
+            display: flex;
+            align-items: center;
+            font-family: Merienda;
+            font-size: 41px;
+            justify-content: center;
+            padding-top: 0px;
+        }
+
+        .go {
+            text-decoration: none;
+            color: black;
+        }
+
+
+        #contact {
+            position: relative;
+            cursor: pointer;
+            top: 16px;
+            left: 69vw;
+            transition: all .2s ease-in-out;
+            font-family: 'Acme';
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+        }
+
+        .head {
+            font-size: 30px;
+            font-family: 'Raleway';
+            margin-top: 5vh;
+            margin-left: 39vw;
+        }
+
+        .bio {
+            margin-left: 25vw;
+            margin-top: 7vh;
+        }
+
+        textarea {
+            width: 46vw;
+            height: 25vh;
+            font-family: 'Raleway';
+            font-size: 17px;
+            margin-top: 5px;
+        }
+
+        label {
+            font-family: 'Raleway';
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .done {
+            margin-left: 64vw;
+            margin-top: 8vh;
+            min-width: 5vw;
+            height: 4vh;
+            font-size: 18px;
+            border: 0;
+            border-radius: 14px;
+            cursor: pointer;
+            background: #b3ddf5;
+        }
+
+        footer {
+            background: #e3dcdd;
+            height: 13vh;
+            margin-top: 21vh;
+        }
+
+        .comp {
+            font-family: Merienda;
+            font-size: 32px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 35px;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        #fa {
+            text-decoration: none;
+            color: black;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .term {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .pri {
+            padding-top: 2vh;
+            margin-left: 46vw;
+        }
+
+        .ab {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        @media screen and (max-width:1440px) {
+            .li1 {
+                margin-left: 4vw;
+            }
+        }
+
+        @media screen and(max-width:1024px) {
+            .done {
+                width: 8vw;
+            }
+
+            .li1 {
+                margin-left: 3vw;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            .pri {
+                margin-left: 13vw;
+            }
+
+            .term {
+                margin-left: 13vw;
+            }
+
+            .ab {
+                margin-left: 13vw;
+            }
+
+            .li1 {
+                margin-left: 10vw;
+            }
+
+            #contact {
+                left: 56vw;
+            }
+
+            .done {
+                margin-left: 60vw;
+                margin-top: 7vh;
+                width: 11vw;
+            }
+
+            .head {
+                margin-left: 32vw;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+            .li1 {
+                font-size: 27px;
+            }
+
+            #contact {
+                left: 50vw;
+                font-size: 18px;
+            }
+
+            .head {
+                font-size: 21px;
+                margin-left: 27vw;
+            }
+
+            label {
+                font-size: 16px;
+            }
+
+            textarea {
+                width: 65vw;
+                font-size: 14px;
+            }
+
+            .bio {
+                margin-left: 17vw;
+            }
+
+            .done {
+                width: 13vw;
+                font-size: 12px;
+                margin-left: 68vw;
+                margin-top: 3vh;
+            }
+
+            footer{
+                margin-top: 28vh;
+                min-height: 20vh;
+            }
+
+            .non {
+                font-size: 11px;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            footer {
+                margin-top: 27vh;
+                height: 14vh;
+            }
+
+            .li1 {
+                margin-left: 12vw;
+            }
+
+            .head {
+                margin-left: 20vw;
+            }
+
+            .done {
+                width: 17vw;
+                margin-left: 63vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div class="li1"> <a class="go" href="/index"> Blogsite</a></div>
+                <span><a href="feedback" id="contact">Feedback</a></span>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <div class="head">Edit profile section</div>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="bio">
+                <label for="bio">About yourself </label> <br>
+                <textarea name="bio" id="bio" cols="30" rows="10">{{user.profile.bio}}</textarea> <br>
+            </div>
+            <button class="done" type="submit">Update</button>
+        </form>
+    </main>
+    <footer>
+        <div class="comp">Blogsite</div>
+        <div class="pri"> <a class="non" href="privacypolicy">Privacy Policy</a></div>
+        <div class="term"> <a class="non" href="termcondition">Terms and Conditions</a></div>
+        <div class="ab"> <a class="non" href="about_us">About us</a></div>
+    </footer>
+
+</body>
+
+</html>

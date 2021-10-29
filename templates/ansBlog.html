@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .head {
+            margin-top: 1vh;
+            margin-left: 11vw;
+            font-size: 31px;
+            font-family: cursive;
+        }
+
+        input[type="text"] {
+            font-size: 18px;
+            padding-left: 5px;
+            color: black;
+        }
+
+        .topic {
+            margin-top: 3vh;
+            margin-left: 7vw;
+        }
+
+        .category {
+            margin-top: 3vh;
+            margin-left: 7vw;
+        }
+
+        .image {
+            margin-left: 7vw;
+            margin-top: 5vh;
+        }
+
+        .desc {
+            margin-top: 3vh;
+            margin-left: 7vw;
+        }
+
+        .question {
+            margin-top: 3vh;
+            margin-left: 7vw;
+        }
+
+        input {
+            height: 4vh;
+            width: 40vw;
+        }
+
+        label {
+            font-family: monospace;
+            font-size: 17px;
+        }
+
+        textarea {
+            width: 40vw;
+            font-size: 16px;
+        }
+
+        #btn {
+            margin-left: 24vw;
+            border: 0;
+            width: 6vw;
+            margin-bottom: 2vh;
+            height: 5vh;
+            border-radius: 11px;
+            transition: all .2s ease-in-out;
+            margin-top: 3vh;
+            background: #7e9aa5;
+            color: white;
+            padding-top: 2px;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            transform: scale(1.1);
+        }
+
+        .bound {
+            min-height: 90vh;
+            margin-top: 5vh;
+            margin-bottom: 7vh;
+            min-width: 55vw;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            background-color: white;
+        }
+
+
+
+        main {
+            display: flex;
+            background-image: url("https://images.unsplash.com/photo-1494319827402-c4b839aed26b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8d2hpdGUlMjBwZW5jaWwlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+            justify-content: center;
+            background-size: cover;
+            align-items: center;
+            height: 100vh;
+        }
+
+        footer {
+            background: #e3dcdd;
+            height: 13vh;
+        }
+
+        .comp {
+            font-family: Merienda;
+            font-size: 32px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 35px;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .term {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .pri {
+            padding-top: 2vh;
+            margin-left: 46vw;
+        }
+        
+        .ab {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        #fa {
+            text-decoration: none;
+            color: black;
+        }
+
+        @media screen and (max-width: 1560px) {
+            .bound {
+                min-height: 96vh;
+                margin-top: 7vh;
+            }
+        }
+
+        @media screen and (max-width: 1440px) {
+            .head {
+                margin-left: 16vw;
+                font-size: 24px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            #btn {
+                margin-left: 26vw;
+            }
+
+            .head {
+                margin-left: 11vw;
+                margin-top: 1vh;
+            }
+
+            input {
+                width: 42vw;
+            }
+
+            textarea {
+                width: 42vw;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            #btn {
+                width: 8vw;
+            }
+
+            input {
+                width: 45vw;
+            }
+
+            textarea {
+                width: 45vw;
+            }
+
+            label {
+                font-size: 15px;
+            }
+
+            .topic {
+                margin-left: 8vw;
+            }
+
+            .category {
+                margin-left: 8vw;
+            }
+
+            .image {
+                margin-left: 8vw;
+            }
+
+            .desc {
+                margin-left: 8vw;
+            }
+
+            .question {
+                margin-left: 8vw;
+            }
+
+            .head {
+                font-size: 22px;
+                margin-left: 9vw;
+            }
+
+            .pri {
+                margin-left: 13vw;
+            }
+
+            .term {
+                margin-left: 13vw;
+            }
+
+            .ab {
+                margin-left: 13vw;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .comp {
+                font-size: 26px;
+            }
+            
+            body{
+                background: #ecf1f5;
+            }
+
+            .bound {
+                width: 83vw;
+            }
+
+            .head {
+                font-size: 19px;
+                margin-left: 7vw;
+            }
+
+            input {
+                width: 67vw;
+            }
+
+            textarea {
+                width: 67vw;
+                font-size: 14px;
+            }
+
+            input[type="text"] {
+                font-size: 14px;
+            }
+
+            label {
+                font-size: 13px;
+            }
+
+            .image {
+                margin-top: 3vh;
+            }
+
+            #image {
+                margin-top: 1vh;
+            }
+
+            #btn {
+                width: 18vw;
+                margin-left: 32vw;
+            }
+
+            footer{
+                margin-top: 20vh;
+                min-height: 20vh;
+            }
+        }
+
+        @media screen and (max-width:375px) {
+            .pri {
+                margin-left: 8vw;
+            }
+
+            .term {
+                margin-left: 8vw;
+            }
+
+            .ab {
+                margin-left: 8vw;
+            }
+
+            .non {
+                font-size: 11px;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            .head {
+                margin-left: 7vw;
+            }
+
+            textarea {
+                font-size: 13px;
+            }
+
+            input[type="text"] {
+                font-size: 13px;
+            }
+
+            footer {
+                margin-top: 3vh;
+                height: 14vh;
+            }
+
+            body {
+                background: #edf2f6;
+            }
+        }
+    </style>
+    <title>Post a blog | Blogsite</title>
+</head>
+
+<body>
+    <main>
+
+        <div class="bound">
+            <div class="head">Answer to this blog by a new one!</div>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" value="blog.pk">
+                <div class="topic">
+                    <label for="name">Title</label> <br>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="category">
+                    <label for="category">Category</label> <br>
+                    <input type="text" name="category" id="category" required
+                        placeholder="eg: Entertainment, Study etc..">
+                </div>
+                <div class="image">
+                    <label for="img">Add Image: </label>
+                    <input type="file" name="image" id="image">
+                </div>
+                <div class="desc">
+                    <label for="desc">Blog/Article</label> <br>
+                    <textarea name="desc" id="desc" cols="30" rows="8" required></textarea>
+                </div>
+                <div class="question">
+                    <label for="name">Question about this blog</label> <br>
+                    <textarea name="question" id="question" cols="30" rows="4" placeholder="(Optional)"></textarea>
+                </div>
+                <button type="submit" id="btn">POST</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="comp">Blogsite</div>
+        <div class="pri"> <a class="non" href="privacypolicy">Privacy Policy</a></div>
+        <div class="term"> <a class="non" href="termcondition">Terms and Conditions</a></div>
+        <div class="ab"> <a class="non" href="about_us">About us</a></div>
+    </footer>
+</body>
+
+</html>

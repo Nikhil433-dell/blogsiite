@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .head {
+            height: 86px;
+            background: #efefef;
+        }
+
+        #name {
+            width: 32vw;
+            margin-top: 6px;
+            margin-left: 5px;
+
+        }
+
+        #email {
+            width: 32vw;
+            margin-left: 5px;
+        }
+
+        #query {
+            width: 32vw;
+            margin-left: 5px;
+
+        }
+
+        label {
+            font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 17px;
+            margin-left: 5px;
+        }
+
+        input {
+            height: 4vh;
+        }
+
+        textarea {
+            height: 14vh;
+        }
+
+        .name {
+            margin-left: 33vw;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            margin-left: 46vw;
+            width: 100px;
+            margin-top: 4vh;
+            height: 39px;
+            border-radius: 28px;
+            transition: all .2s ease-in-out;
+            border: none;
+            border: 0.1 solid;
+            font-size: 15px;
+            font-family: monospace;
+            background: #6ebcff;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .email {
+            margin-left: 33vw;
+            margin-bottom: 10px;
+        }
+
+        .query {
+            margin-left: 33vw;
+            margin-bottom: 10px;
+        }
+
+        .cont {
+            position: relative;
+            left: 45vw;
+            font-size: 32px;
+            font-family: -webkit-pictograph;
+            top: 17px;
+        }
+
+        input[type="text"] {
+            font-size: 15px;
+        }
+
+        input[type="email"] {
+            font-size: 15px;
+        }
+
+        .h {
+            border: 1px solid rgb(116, 116, 116);
+        }
+
+
+        footer {
+            background: #e3dcdd;
+            height: 13vh;
+            margin-top: 31vh;
+        }
+
+        .comp {
+            font-family: Merienda;
+            font-size: 32px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 35px;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .term {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .pri {
+            padding-top: 2vh;
+            margin-left: 46vw;
+        }
+
+        .ab {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        #fa {
+            text-decoration: none;
+            color: black;
+        }
+
+
+        @media screen and (max-width: 1025px) {
+            .cont {
+                left: 44vw;
+            }
+
+            .btn {
+                margin-left: 45vw;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            .pri {
+                margin-left: 13vw;
+            }
+
+            .term {
+                margin-left: 13vw;
+            }
+
+            .ab {
+                margin-left: 13vw;
+            }
+
+            #name {
+                width: 46vw;
+            }
+
+            #email {
+                width: 46vw;
+            }
+
+            #query {
+                width: 46vw;
+            }
+
+            .name {
+                margin-left: 29vw;
+            }
+
+            .email {
+                margin-left: 29vw;
+            }
+
+            .query {
+                margin-left: 29vw;
+            }
+
+            .btn {
+                width: 79px;
+                margin-left: 47vw;
+                height: 33px;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+
+            footer {
+                margin-top: 28vh;
+            }
+
+            .non {
+                font-size: 11px;
+            }
+
+            .cont {
+                left: 35vw;
+            }
+
+            .head {
+                height: 70px;
+            }
+
+            .name {
+                margin-left: 13vw;
+            }
+
+            .email {
+                margin-left: 13vw;
+            }
+
+            .query {
+                margin-left: 13vw;
+            }
+
+            #name {
+                width: 69vw;
+            }
+
+            #email {
+                width: 69vw;
+            }
+
+            #query {
+                width: 69vw;
+            }
+
+            .btn {
+                margin-left: 40vw;
+            }
+
+            footer{
+                min-height: 20vh;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .cont {
+                font-size: 26px;
+                left: 36vw;
+            }
+
+            label {
+                font-size: 12px;
+            }
+
+            .btn {
+                margin-left: 39vw;
+            }
+
+            footer{
+                margin-top: 30vh;
+            }
+
+        }
+
+        @media screen and (max-width: 320px) {
+
+            footer {
+                margin-top: 27vh;
+                height: 14vh;
+            }
+
+            .cont {
+                left: 35vw;
+            }
+
+            .btn {
+                width: 67px;
+                margin-left: 40vw;
+                height: 26px;
+                font-size: 12px;
+            }
+        }
+    </style>
+    <title>Feedback | Blogsite</title>
+</head>
+
+<body>
+    <div id="c1">
+        <div class="head">
+            <span class="cont">Feedback</span>
+        </div>
+        <div class="h"></div>
+        <!-- <hr> -->
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="name">
+                <label for="name">Name</label>
+                <br>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="query">
+                <label for="query">Feedback Description</label>
+                <br>
+                <textarea type="textarea" name="query" id="query" cols="30" rows="10" required></textarea>
+            </div>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <div class="comp">Blogsite</div>
+        <div class="pri"> <a class="non" href="privacypolicy">Privacy Policy</a></div>
+        <div class="term"> <a class="non" href="termcondition">Terms and Conditions</a></div>
+        <div class="ab"> <a class="non" href="about_us">About us</a></div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,1052 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css'   %} ">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            background-color: #c5c5c5;
+            height: 8vh;
+            width: 100%;
+        }
+
+        .li1 {
+            float: left;
+        }
+
+
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #contact {
+            position: relative;
+            cursor: pointer;
+            top: 16px;
+            left: 51px;
+            transition: all .2s ease-in-out;
+            font-family: 'Acme';
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+        }
+
+        #contact:hover {
+            transform: scale(2.1);
+        }
+
+        .li1 {
+            float: left;
+            height: 7vh;
+            width: 13vw;
+            display: flex;
+            align-items: center;
+            font-family: Merienda;
+            font-size: 41px;
+            justify-content: center;
+            padding-top: 0px;
+        }
+
+        .li2 {
+            float: right;
+            transition: all .2s ease-in-out;
+            margin-right: 131px;
+            width: 5vw;
+            margin-top: 3px;
+            height: 30px;
+            padding: 8px;
+            cursor: pointer;
+            padding-top: 12px;
+            text-align: center;
+        }
+
+        .li2:hover {
+            transform: scale(1.1);
+        }
+
+
+
+
+        #a1 {
+            text-decoration: none;
+            font-family: Acme;
+            color: black;
+            font-size: 26px;
+        }
+
+
+        #firstimg {
+            background-image: url("https://images.unsplash.com/photo-1542435503-956c469947f6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZyUyMGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+            background-size: cover;
+            width: 100%;
+            height: 90vh;
+        }
+
+        .rewriblogs {
+            background: #b2a39a;
+            width: 14vw;
+            height: 8vh;
+            position: relative;
+            display: flex;
+            font-family: cursive;
+            transition: all .2s ease-in-out;
+            left: 43vw;
+            top: 41vh;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            font-size: 29px;
+            border-radius: 50px;
+        }
+
+        .rewriblogs:hover {
+            transform: scale(1.1);
+
+        }
+
+        #up {
+            width: 50px;
+            position: relative;
+            transition: all .2s ease-in-out;
+            left: 48vw;
+            top: 73vh;
+            cursor: pointer;
+        }
+
+        #up:hover {
+            transform: scale(1.1);
+
+        }
+
+        #head {
+            height: 8vh;
+            padding-top: 3vh;
+            padding-left: 3vw;
+            font-size: 42px;
+            background: #e4dedd;
+            font-family: Montserrat;
+            font-weight: bolder;
+        }
+
+        #story {
+            height: 50vh;
+            display: flex;
+        }
+
+        .content {
+            width: 25vw;
+            padding-top: 10vh;
+            padding-left: 6vw;
+        }
+
+        b {
+            font-size: 28px;
+            font-family: cursive;
+        }
+
+
+        p {
+            font-family: 'Montserrat';
+            font-weight: bolder;
+            font-size: 26px;
+        }
+
+
+
+        .name {
+            margin-left: 33vw;
+            margin-top: 23px;
+        }
+
+        .email {
+            margin-left: 33vw;
+            margin-top: 23px;
+        }
+
+        .query {
+            margin-left: 33vw;
+            margin-top: 23px;
+        }
+
+        .btn {
+            margin-left: 47vw;
+            margin-top: 23px;
+            width: 95px;
+            height: 38px;
+            margin-bottom: 21px;
+            border-radius: 18px;
+            transition: all .2s ease-in-out;
+            border: none;
+            cursor: pointer;
+            background: #6ebcff;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .cont {
+            margin-left: 45vw;
+            font-size: 32px;
+            margin-top: 24px;
+        }
+
+        #name {
+            width: 32vw;
+            margin-top: 6px;
+            margin-left: 5px;
+
+        }
+
+        #email {
+            width: 32vw;
+            margin-left: 5px;
+        }
+
+        #query {
+            width: 32vw;
+            margin-left: 5px;
+
+        }
+
+        label {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 17px;
+            margin-left: 5px;
+        }
+
+        .mesg {
+            background: #f1f1f7;
+            /* height: 5vh; */
+            padding: 12px;
+
+        }
+
+        .msg {
+
+            font-family: cursive;
+            color: #e02a2a;
+            font-size: 11px;
+
+        }
+
+        .err {
+            color: black;
+        }
+
+        /* Media Queries */
+
+        @media screen and (max-width: 1542px) {
+            .li2 {
+                width: 7vw;
+            }
+        }
+
+        @media screen and (max-width: 1096px) {
+            .li2 {
+                width: 9vw;
+            }
+        }
+
+        @media screen and (max-width: 1190px) {
+            p {
+                font-size: 16px;
+            }
+
+            .cont {
+                margin-left: 43vw;
+                font-size: 26px;
+            }
+
+            #query {
+                height: 15vh;
+            }
+
+            .btn {
+                margin-left: 45vw;
+            }
+
+            b {
+                font-size: 20px
+            }
+
+            .li2 {
+                margin-top: 1px;
+                font-size: 22px;
+            }
+
+            #contact {
+                top: 12px;
+                font-size: 22px;
+            }
+
+            .rewriblogs {
+                font-size: 22px;
+            }
+
+            .li1 {
+                font-size: 34px;
+                height: 8vh;
+            }
+
+
+        }
+
+
+        @media screen and (max-width: 970px) {
+            .li1 {
+                margin-left: 4vw;
+            }
+
+            .li2 {
+                width: 10vw;
+            }
+
+            #a1 {
+                font-size: 22px;
+            }
+
+            #contact {
+                font-size: 22px;
+            }
+
+            .rewriblogs {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .li1 {
+                margin-left: 4vw;
+            }
+
+            .inp {
+                margin-top: 13px;
+                margin-right: 0;
+            }
+
+            #inpu {
+                height: 3vh;
+                width: 18vw;
+            }
+
+
+            input[type="text"] {
+                font-size: 14px;
+                padding-left: 5px;
+                color: black;
+            }
+
+            input[type="email"] {
+                font-size: 14px;
+                padding-left: 5px;
+                color: black;
+            }
+
+            #name {
+                width: 48vw;
+            }
+
+            #email {
+                width: 48vw;
+            }
+
+            #query {
+                width: 48vw;
+            }
+
+            .name {
+                margin-left: 26vw;
+            }
+
+            .email {
+                margin-left: 26vw;
+            }
+
+            .query {
+                margin-left: 26vw;
+            }
+
+            .rewriblogs {
+                width: 16vw;
+                height: 6vh;
+                font-size: 16px;
+            }
+
+            .inup {
+                right: 0;
+                right: 9px;
+            }
+
+            .li2 {
+                margin-right: 1vw;
+            }
+
+        }
+
+        @media screen and (max-width: 650px) {
+            .li2 {
+                width: 13vw;
+            }
+
+            #contact {
+                display: none;
+            }
+
+            .li1 {
+                margin-left: 6vw;
+            }
+        }
+
+        @media screen and (max-width: 570px) {
+            .rewriblogs {
+                font-size: 12px;
+            }
+
+            label {
+                font-size: 13px;
+            }
+
+            #name {
+                width: 60vw;
+            }
+
+            #email {
+                width: 60vw;
+            }
+
+            #query {
+                width: 60vw;
+                height: 13vw;
+            }
+
+            .name {
+                margin-left: 20vw;
+            }
+
+            .email {
+                margin-left: 20vw;
+            }
+
+            .query {
+                margin-left: 20vw;
+            }
+
+            #head {
+                font-size: 33px;
+            }
+
+            .li2 {
+                margin-right: 22px;
+            }
+
+        }
+
+        @media screen and (max-width: 430px) {
+            .li1 {
+                margin-left: 11vw;
+            }
+
+            #a1 {
+                font-size: 18px;
+            }
+
+            .li2 {
+                margin-right: 0px;
+            }
+
+
+
+            .cont {
+                margin-left: 35vw;
+            }
+
+            .btn {
+                margin-left: 39vw;
+            }
+
+            #story {
+                display: grid;
+                height: 59vh;
+                margin-bottom: 10px;
+            }
+
+            .para {
+                width: 87vw;
+            }
+
+            .content {
+                padding-top: 4vh;
+
+            }
+
+            .rewriblogs {
+                width: 19vw;
+                height: 5vh;
+            }
+
+
+        }
+
+        @media screen and (max-width: 375px) {
+            #firstimg {
+                height: 81vh;
+            }
+
+            #up {
+                left: 45vw;
+                top: 66vh;
+            }
+
+            .rewriblogs {
+                width: 20vw;
+                left: 42vw;
+            }
+
+            #query {
+                width: 62vw;
+                height: 21vw;
+            }
+
+            input {
+                height: 3vh;
+            }
+
+            input[type="text"] {
+                font-size: 11px;
+            }
+
+            input[type="email"] {
+                font-size: 11px;
+            }
+
+            input[type="textarea"] {
+                font-size: 11px;
+            }
+
+            .li1 {
+                margin-left: 10vw;
+                font-size: 28px;
+            }
+
+            #a1 {
+                font-size: 16px;
+                margin-right: 1px;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            .li1 {
+                font-size: 21px;
+                margin-left: 9vw;
+            }
+
+            #a1 {
+                font-size: 12px;
+            }
+
+            .li2 {
+                margin-right: 0;
+            }
+
+
+
+            .rewriblogs {
+                width: 22vw;
+                font-size: 10px;
+                left: 41vw;
+            }
+
+            #up {
+                left: 45vw;
+                width: 36px;
+            }
+
+            #head {
+                height: 4vh;
+                padding-bottom: 8px;
+                font-size: 24px;
+            }
+
+            b {
+                font-size: 16px;
+            }
+
+            .para {
+                font-size: 12px;
+            }
+
+            .cont {
+                margin-left: 29vw;
+            }
+
+            .btn {
+                font-size: 11px;
+                margin-left: 41vw;
+                width: 22vw;
+                height: 5vh;
+            }
+
+            ul {
+                height: 7vh;
+            }
+
+            .name {
+                margin-left: 18vw;
+            }
+
+            .email {
+                margin-left: 18vw;
+            }
+
+            .query {
+                margin-left: 18vw;
+            }
+        }
+
+        nav ul {
+            margin-top: -4vh;
+        }
+
+
+        .mesg {
+            background: #f1f1f7;
+            /* height: 5vh; */
+            padding: 12px;
+        }
+
+        input {
+            height: 4vh;
+        }
+
+        #mid {
+            width: 92vw;
+        }
+
+
+
+        .msg {
+
+            font-family: cursive;
+            color: #e02a2a;
+            font-size: 15px;
+
+        }
+
+        .promise {
+            width: 46vw;
+            margin-left: 45vw;
+            margin-top: 5vh;
+            margin-bottom: 3vh;
+        }
+
+        .err {
+            color: black;
+        }
+
+
+        #head {
+            height: 8vh;
+            padding-top: 2vh;
+            padding-left: 3vw;
+            font-size: 35px;
+            background: #e4dedd;
+            font-family: Montserrat;
+            font-weight: bolder;
+        }
+
+        .content {
+            width: 66vw;
+            padding-top: 4vh;
+            padding-bottom: 10px;
+            padding-left: 3vw;
+            user-select: none;
+        }
+
+        .cont {
+            font-weight: bold;
+        }
+
+        #story {
+            height: 37vh;
+            background-image: url("/static/img/bench-accounting-nvzvOPQW0gc-unsplash.jpg");
+            background-size: cover;
+            opacity: 0.9;
+        }
+
+        footer {
+            background: #e3dcdd;
+            height: 13vh;
+        }
+
+        .comp {
+            font-family: Merienda;
+            font-size: 32px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 35px;
+        }
+
+        #logo {
+            width: 10vw;
+            border-radius: 80px;
+            margin-top: 4vh;
+            margin-left: 7vw;
+        }
+
+        .non {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .term {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .pri {
+            padding-top: 2vh;
+            margin-left: 46vw;
+        }
+
+        #fa {
+            text-decoration: none;
+            color: black;
+        }
+
+        .ab {
+            margin-top: 1vh;
+            margin-left: 46vw;
+        }
+
+        .para {
+            font-family: system-ui;
+        }
+
+        #story {
+            height: auto;
+        }
+
+
+
+        p {
+            font-size: 23px;
+            font-weight: 500;
+        }
+
+        @media screen and (max-width:1561px) {
+            .msg {
+                font-size: 13px;
+            }
+        }
+
+
+        @media screen and (max-width:1258px) {
+            #logo {
+                width: 12vw;
+                border-radius: 80px;
+                margin-top: 8vh;
+                margin-left: 7vw;
+            }
+
+            nav ul {
+                margin-top: -8vh;
+            }
+        }
+
+        @media screen and (max-width:1024px) {
+            #story {
+                height: auto;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            nav ul {
+                margin-top: -3vh;
+            }
+
+
+            #logo {
+                width: 12vw;
+                border-radius: 80px;
+                margin-top: 3vh;
+                margin-left: 7vw;
+            }
+        }
+
+        @media screen and (max-width: 802px) {
+            #logo {
+                width: 18vw;
+            }
+        }
+
+
+        @media screen and (max-width: 768px) {
+            #logo {
+                width: 15vw;
+                border-radius: 80px;
+                margin-top: 3vh;
+                margin-left: 6vw;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .pri {
+                margin-left: 13vw;
+            }
+
+            .term {
+                margin-left: 13vw;
+            }
+
+            .ab {
+                margin-left: 13vw;
+            }
+        }
+
+        @media screen and (max-width: 604px) {
+            p {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width:430px) {
+            #search {
+                bottom: 0;
+                height: 6vh;
+            }
+
+            .comp {
+                font-size: 26px;
+            }
+
+            #story {
+                margin-bottom: 0;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .content {
+                padding-top: 26vh;
+                padding-bottom: 0px;
+                padding-left: 7vw;
+            }
+
+            #logo {
+                position: absolute;
+                top: 109vh;
+                width: 29vw;
+                left: 25vw;
+            }
+
+            #head {
+                height: 7vh;
+                padding-top: 2vh;
+                font-size: 29px;
+            }
+
+            #up {
+                width: 34px;
+                left: 47vw;
+            }
+
+            nav ul {
+                margin-top: 0vh;
+            }
+
+
+            .promise {
+                display: none;
+            }
+
+            #mid {
+                display: none;
+            }
+
+            footer {
+                min-height: 20vh;
+            }
+        }
+
+        @media screen and (max-width:378px) {
+            .li2 {
+                width: 15vw;
+            }
+        }
+
+        @media screen and (max-width:375px) {
+            #logo {
+                top: 99vh;
+                width: 35vw;
+                left: 27vw;
+            }
+
+            .pri {
+                margin-left: 8vw;
+            }
+
+            .term {
+                margin-left: 8vw;
+            }
+
+            .ab {
+                margin-left: 8vw;
+            }
+
+            .non {
+                font-size: 11px;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            #search {
+                bottom: 5px;
+            }
+
+            .content {
+                padding-top: 23vh;
+
+            }
+
+            footer {
+                margin-top: 3vh;
+                height: 14vh;
+            }
+        }
+    </style>
+    <title>Welcome to Blogsite</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div id="logo"></div>
+                <div class="li1">Blogsite</div>
+                <span><a href="#c1" id="contact">Contact</a></span>
+                <div class="li2"><a href="login" id="a1">Sign up</a></div>
+            </ul>
+            {% if messages %}
+            <hr>
+            <div class="mesg">
+
+                {% for message in messages %}
+                <span class="msg"> <span class="err"> Error:</span> {{message}}</span>
+                {% endfor %}
+            </div>
+            <hr>
+            {% endif %}
+            <div id="firstimg">
+                <a href="/login" id="fa">
+                    <div class="rewriblogs nones" id="wri_blog">
+                        Write Blogs
+                    </div>
+                </a>
+                <a href="#head">
+                    <img id="up" src="/static/img/down.png" alt="">
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="readblogs">
+            <p id="head">Who we are ?</p>
+            <hr>
+            <div class="container" id="story">
+                <div class="content">
+                    <p class="para">Welcome to a new world. In today's modern world, no one has a habit to read or
+                        writing something. But we think if you read something you are gonna feel it and if you write
+                        something then you will express your feelings. On this platform, you can write articles, novels,
+                        blogs, and anything that made someone happy. We want young writers to spread their thinking to
+                        the world and make a big change. <br> <br>
+                    </p>
+                    <hr id="mid">
+                    <p class="para promise ">We promise you to provide the best and original content. The unique point
+                        that you all must know is that our website offers you the chance to question a certain blog in
+                        case if you don't agree with the thoughts of a writer as we respect the beliefs and philosophy
+                        and line of thinking of every person provided it is rational.
+                    </p>
+                </div>
+                <div class="makelogo">
+                    <img src="/static/img/contlogo.png" alt="Blogsite" id="logo">
+                </div>
+            </div>
+            <hr>
+            <div id="c1">
+                <p class="cont">Contact us</p>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="name">
+                        <label for="name">Name</label>
+                        <br>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="email">
+                        <label for="email">Email</label>
+                        <br>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="query">
+                        <label for="query">Reason for Contact or Feedback</label>
+                        <br>
+                        <textarea type="textarea" name="query" id="query" cols="30" rows="10" required></textarea>
+                    </div>
+                    <button class="btn" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="comp">Blogsite</div>
+        <div class="pri"> <a class="non" href="privacypolicy">Privacy Policy</a></div>
+        <div class="term"> <a class="non" href="termcondition">Terms and Conditions</a></div>
+        <div class="ab"> <a class="non" href="about_us">About us</a></div>
+    </footer>
+</body>
+<script>
+
+
+    // url = "/login";
+    // wri_blog.addEventListener("click", () => {
+    //     window.open(url)
+    // })
+
+
+
+
+
+
+
+</script>
+
+
+</html>
